@@ -1,0 +1,21 @@
+
+<%- include("partials/header.ejs") %>
+
+<h2>Update Your Post Here:</h2>
+
+<div class="container">
+    <form action="/submit" method="POST">
+        <div class="nameBox">
+            <label for="name">Name:</label>
+            <input type="text" name="fName" >
+        </div>
+        <div class="postBox">
+            <label for="thoughts" id="blogLabel">Post:</label>
+            <textarea type="text" name="thoughts" rows="4" cols="50" maxlength="150" id="blogInput"></textarea>
+        </div>
+        <input type="submit" value="Submit" id="btn">
+
+    </form>
+    <%- include("partials/footer.ejs") %>
+
+</div>

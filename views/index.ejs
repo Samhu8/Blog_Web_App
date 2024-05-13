@@ -1,0 +1,37 @@
+
+<%- include("partials/header.ejs") %>
+
+    <h1>Daily Blog</h1>
+
+    <div class="container">
+
+        <form action="/submit" method="POST">
+            <div class="nameBox">
+                <label for="name">Name:</label>
+                <input type="text" name="fName">
+            </div>
+            <div class="postBox">
+                <label for="thoughts" id="blogLabel">Post:</label>
+                <textarea type="text" name="thoughts" rows="4" cols="50" maxlength="150" id="blogInput" ></textarea>
+            </div>
+            <input type="submit" value="Submit" id="btn">
+        </form>
+
+        <div class="posts">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Post</th>
+                    <th>Post Options</th>
+                </tr>
+                <tr>
+                    <td><%= locals.finalName %></td>
+                    <td><%= locals.finalThought %></td>
+                    <td><a href="/edit">Edit</a> | <a href="/">Delete</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <%- include("partials/footer.ejs") %>
+    </div>
+
